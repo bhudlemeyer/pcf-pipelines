@@ -43,5 +43,6 @@ cat options.json
 if [ -z $OM_VM_FOLDER ]; then
   govc import.ova -options=options.json $file_path
 else
+  govc folder.create $OM_VM_FOLDER
   govc import.ova -folder=$OM_VM_FOLDER -options=options.json $file_path
 fi
