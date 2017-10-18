@@ -230,9 +230,27 @@ jq \
   --arg mysql_backups_scp_key "$MYSQL_BACKUPS_SCP_KEY" \
   --arg mysql_backups_scp_destination "$MYSQL_BACKUPS_SCP_DESTINATION" \
   --arg mysql_backups_scp_cron_schedule "$MYSQL_BACKUPS_SCP_CRON_SCHEDULE" \
+  --arg haproxy_foward_tls "$HAPROXY_FORWARD_TLS" \
+  --arg haproxy_ssl_ciphers "$HAPROXY_SSL_CIPHERS"\
+  --arg router_ssl_ciphers "$ROUTER_SSL_CIPHERS"
   '
   . +
   {
+    ".properties.gorouter_ssl_ciphers": {
+      "value": "$router_ssl_ciphers"
+    },
+    ".properties.haproxy_ssl_ciphers": {
+      "value": "$haproxy_ssl_ciphers"
+    },
+    ".properties.haproxy_forward_tls": {
+      "value": "$haproxy_foward_tls"
+    },
+    ".properties.networking_poe_ssl_cert": {
+      "value": {
+       "cert_pem": $cert_pem,
+       "private_key_pem": $private_key_pem
+      }
+    },
     ".properties.system_blobstore": {
       "value": "internal"
     },
