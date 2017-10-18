@@ -76,7 +76,7 @@ cf_resources=$(
     "router": $ROUTER_INSTANCES,
     "syslog_adapter": $SYSLOG_ADAPTER_INSTANCES,
     "tcp_router": $TCP_ROUTER_INSTANCES,
-    "uaa": $UAA_INSTANCES,
+    "uaa": $UAA_INSTANCES
   }
   %
 EOF
