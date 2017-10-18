@@ -58,7 +58,6 @@ cf_resources=$(
   read -d'%' -r input <<EOF
   {
     "backup-prepare": $BACKUP_PREPARE_INSTANCES,
-    "ccdb": $CCDB_INSTANCES,
     "clock_global": $CLOCK_GLOBAL_INSTANCES,
     "cloud_controller": $CLOUD_CONTROLLER_INSTANCES,
     "cloud_controller_worker": $CLOUD_CONTROLLER_WORKER_INSTANCES,
@@ -67,7 +66,6 @@ cf_resources=$(
     "diego_cell": $DIEGO_CELL_INSTANCES,
     "diego_database": $DIEGO_DATABASE_INSTANCES,
     "doppler": $DOPPLER_INSTANCES,
-    "etcd_tls_server": $ETCD_TLS_SERVER_INSTANCES,
     "ha_proxy": $HA_PROXY_INSTANCES,
     "loggregator_trafficcontroller": $LOGGREGATOR_TC_INSTANCES,
     "mysql": $MYSQL_INSTANCES,
@@ -79,7 +77,6 @@ cf_resources=$(
     "syslog_adapter": $SYSLOG_ADAPTER_INSTANCES,
     "tcp_router": $TCP_ROUTER_INSTANCES,
     "uaa": $UAA_INSTANCES,
-    "uaadb": $UAADB_INSTANCES
   }
   %
 EOF
