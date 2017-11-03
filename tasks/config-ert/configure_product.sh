@@ -550,7 +550,7 @@ function load_cf_properties () {
   else
     .
   end
-  ' > cf_properties
+   > cf_properties
   cat cf_properties
   rm cf_properties
 }
