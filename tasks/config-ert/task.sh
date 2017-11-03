@@ -220,6 +220,14 @@ cf_properties=$(
 
     +
 
+    #route services
+    {
+      ".properties.route_services": {
+      "value": $route_services
+    }
+    
+    +
+
     # TLS Cipher Suites
     {
       ".properties.gorouter_ssl_ciphers": {
