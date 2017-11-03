@@ -224,8 +224,9 @@ cf_properties=$(
     {
       ".properties.route_services": {
       "value": $route_services
-    }
-    
+      }
+    } 
+
     +
 
     # TLS Cipher Suites
