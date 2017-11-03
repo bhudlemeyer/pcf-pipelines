@@ -166,8 +166,8 @@ function decorate_nsx_lb() {
 }
 
 function load_cf_properties () {
-echo 'TEST {}' |
-jq \
+  echo '{}' |
+  jq \
   --arg tcp_routing "$TCP_ROUTING" \
   --arg tcp_routing_ports "$TCP_ROUTING_PORTS" \
   --arg loggregator_endpoint_port "$LOGGREGATOR_ENDPOINT_PORT" \
@@ -213,8 +213,8 @@ jq \
   --arg ldap_mail_attr_name "$MAIL_ATTR_NAME" \
   --arg ldap_first_name_attr "$FIRST_NAME_ATTR" \
   --arg ldap_last_name_attr "$LAST_NAME_ATTR" \
-  --arg saml_cert_pem "$saml_cert_pem" \
-  --arg saml_key_pem "$saml_key_pem" \
+  --arg saml_cert_pem "$SERVICE_PROVIDER_CERT" \
+  --arg saml_key_pem "$SERVICE_PROVIDER_KEY" \
   --arg mysql_proxy_static_ips "$MYSQL_PROXY_STATIC_IPS" \
   --arg mysql_proxy_service_hostname "$MYSQL_PROXY_SERVICE_HOSTNAME" \
   --arg mysql_backups "$MYSQL_BACKUPS" \
