@@ -105,6 +105,9 @@ cf_properties=$(
       ".properties.logger_endpoint_port": {
         "value": $loggregator_endpoint_port
       },
+      ".properties.route_services": {
+        "value": $route_services
+      },
       ".properties.route_services.enable.ignore_ssl_cert_verification": {
         "value": $ignore_ssl_cert
       },
@@ -217,15 +220,6 @@ cf_properties=$(
         "value": $disable_http_proxy
       }
     }
-
-    +
-
-    #route services
-    {
-      ".properties.route_services": {
-      "value": $route_services
-      }
-    } 
 
     +
 
