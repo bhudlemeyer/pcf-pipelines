@@ -166,7 +166,7 @@ function decorate_nsx_lb() {
 }
 
 function load_cf_properties () {
-echo '{}' |
+echo 'TEST {}' |
 jq \
   --arg tcp_routing "$TCP_ROUTING" \
   --arg tcp_routing_ports "$TCP_ROUTING_PORTS" \
