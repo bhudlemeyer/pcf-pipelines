@@ -200,6 +200,7 @@ jq \
   --arg smtp_user "$SMTP_USER" \
   --arg smtp_password "$SMTP_PWD" \
   --arg smtp_auth_mechanism "$SMTP_AUTH_MECHANISM" \
+  --arg smtp_enable_starttls_auto "$SMTP_ENABLE_STARTTLS_AUTO" \
   --arg enable_security_event_logging "$ENABLE_SECURITY_EVENT_LOGGING" \
   --arg syslog_host "$SYSLOG_HOST" \
   --arg syslog_drain_buffer_size "$SYSLOG_DRAIN_BUFFER_SIZE" \
@@ -394,13 +395,10 @@ jq \
         }
       },
       ".properties.smtp_enable_starttls_auto": {
-        "value": true
+        "value": $smtp_enable_starttls_auto
       },
       ".properties.smtp_auth_mechanism": {
         "value": $smtp_auth_mechanism
-      },
-      ".properties.smtp_enable_starttls_auto": {
-        "value": $smtp_enable_starttls_auto
       }
     }
   else
