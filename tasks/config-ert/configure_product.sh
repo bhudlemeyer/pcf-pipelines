@@ -398,6 +398,9 @@ jq \
       },
       ".properties.smtp_auth_mechanism": {
         "value": $smtp_auth_mechanism
+      },
+      ".properties.smtp_enable_starttls_auto": {
+        "value": $smtp_enable_starttls_auto
       }
     }
   else
