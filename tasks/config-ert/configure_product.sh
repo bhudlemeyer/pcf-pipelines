@@ -219,6 +219,7 @@ jq \
   --arg ldap_last_name_attr "$LAST_NAME_ATTR" \
   --arg saml_cert_pem "$saml_cert_pem" \
   --arg saml_key_pem "$saml_key_pem" \
+  --arg mysql_remote_admin "MYSQL_REMOTE_ADMIN" \
   --arg mysql_proxy_static_ips "$MYSQL_PROXY_STATIC_IPS" \
   --arg mysql_proxy_service_hostname "$MYSQL_PROXY_SERVICE_HOSTNAME" \
   --arg mysql_backups "$MYSQL_BACKUPS" \
@@ -286,7 +287,7 @@ jq \
       "value": $mysql_proxy_service_hostname
     },
     ".mysql.remote_admin_access": {
-      "value": "$MYSQL_REMOTE_ADMIN"
+      "value": "$mysql_remote_admin"
     },
     ".tcp_router.static_ips": {
       "value": $tcp_router_static_ips
