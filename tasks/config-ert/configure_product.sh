@@ -285,6 +285,9 @@ jq \
     ".mysql_proxy.service_hostname": {
       "value": $mysql_proxy_service_hostname
     },
+    ".mysql.remote_admin_access": {
+      "value": "$MYSQL_REMOTE_ADMIN"
+    },
     ".tcp_router.static_ips": {
       "value": $tcp_router_static_ips
     },
