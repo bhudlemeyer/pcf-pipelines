@@ -372,7 +372,9 @@ cf_properties=$(
           "value": $mysql_backups_s3_access_key_id
         },
         ".properties.mysql_backups.s3.secret_access_key":  {
-          "value": $mysql_backups_s3_secret_access_key
+           "value": {
+             "secret": $mysql_backups_s3_secret_access_key
+           }
         },
         ".properties.mysql_backups.s3.cron_schedule":  {
           "value": $mysql_backups_s3_cron_schedule
