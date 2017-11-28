@@ -83,6 +83,7 @@ cf_properties=$(
     --arg ldap_last_name_attr "$LAST_NAME_ATTR" \
     --arg saml_cert_pem "$SAML_SSL_CERT" \
     --arg saml_key_pem "$SAML_SSL_PRIVATE_KEY" \
+    --arg mysql_remote_admin "$MYSQL_REMOTE_ADMIN" \
     --arg mysql_backups "$MYSQL_BACKUPS" \
     --arg mysql_backups_s3_endpoint_url "$MYSQL_BACKUPS_S3_ENDPOINT_URL" \
     --arg mysql_backups_s3_bucket_name "$MYSQL_BACKUPS_S3_BUCKET_NAME" \
@@ -143,6 +144,9 @@ cf_properties=$(
       },
       ".router.request_timeout_in_seconds": {
         "value": $router_request_timeout_seconds
+      },
+      ".mysql.remote_admin_access": {
+        "value": $mysql_remote_admin
       },
       ".mysql_monitor.recipient_email": {
         "value": $mysql_monitor_email
