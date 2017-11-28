@@ -57,7 +57,17 @@ EOF
 
   echo "Importing OVA of new OpsMgr VM..."
   echo "Running govc import.ova -options=opsman_settings.json -k=true ${OPSMAN_PATH}"
-  govc import.ova -options=opsman_settings.json -k=true ${OPSMAN_PATH}
+  # govc import.ova -options=opsman_settings.json -k=true ${OPSMAN_PATH}
+  
+  if [ -z $OM_VM_FOLDER ]; then
+    govc import.ova -options=options.json $file_path
+  else
+    if [ `govc folder.info $OM_VM_FOLDER 2>&1 | grep $OM_VM_FOLDER | awk '{print $2}'` != $OM_VM_FOLDER ]; then
+      govc folder.create $OM_VM_FOLDER
+    fi
+    govc import.ova -folder=$OM_VM_FOLDER -options=opsman_settings.json -k=true ${OPSMAN_PATH}
+  fi
+
   #
   # echo "Setting CPUs on new OpsMgr VM... /${GOVC_DATACENTER}/${OPSMAN_VM_FOLDER}/${OPSMAN_NAME}"
   govc vm.change -c=2 -k=true -vm=${OPSMAN_NAME}
