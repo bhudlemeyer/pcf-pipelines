@@ -43,7 +43,8 @@ IAAS_CONFIGURATION=$(cat <<-EOF
     {"Key":"gateway","Value":"$GATEWAY"},
     {"Key":"DNS","Value":"$DNS"},
     {"Key":"ntp_servers","Value":"$NTP"},
-    {"Key":"admin_password","Value":"$OPSMAN_SSH_PASSWORD"}
+    {"Key":"admin_password","Value":"$OPSMAN_SSH_PASSWORD"},
+    {"Key":"custom_hostname","Value":"$OM_VM_NAME"}
   ],
   "PowerOn":false,
   "InjectOvfEnv":false,
