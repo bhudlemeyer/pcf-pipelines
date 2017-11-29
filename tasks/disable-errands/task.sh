@@ -45,6 +45,12 @@ if [ -z "$will_disable" ]; then
   exit 0
 fi
 
+if [ ! -z "$when_changed" ]; then
+  STATE="--post-deploy-state when-changed"
+else
+  STATE="--post-deploy-state disabled"
+fi
+
 while read errand; do
   echo -n Disabling $errand...
   om-linux \
@@ -55,6 +61,7 @@ while read errand; do
     set-errand-state \
     --product-name "$PRODUCT_NAME" \
     --errand-name $errand \
-    --post-deploy-state "disabled"
+    $STATE
+#    --post-deploy-state "disabled"
   echo done
 done < <(echo "$will_disable")
