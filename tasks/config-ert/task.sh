@@ -2,6 +2,8 @@
 
 set -eux
 
+env
+
 source pcf-pipelines/functions/generate_cert.sh
 
 if [[ -z "$SSL_CERT" ]]; then
