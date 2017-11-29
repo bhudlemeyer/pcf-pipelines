@@ -45,7 +45,7 @@ if [ -z "$will_disable" ]; then
   exit 0
 fi
 
-if [ ! -z "$when_changed" ]; then
+if [ ! -z "$WHEN_CHANGED" ]; then
   STATE="--post-deploy-state when-changed"
 else
   STATE="--post-deploy-state disabled"
