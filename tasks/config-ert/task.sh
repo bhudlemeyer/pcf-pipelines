@@ -632,7 +632,7 @@ if [[ -z "$ERRANDS_TO_DISABLE" ]] || [[ "$ERRANDS_TO_DISABLE" == "none" ]]; then
   echo "No post-deploy errands to disable"
 else
   enabled_errands=$(
-  om-linux -t https://${OPS_MGR_HOST} -u $OPS_MGR_USR -p $OPS_MGR_PWD -k errands --product-name $PRODUCT_NAME |
+  om-linux -t https://${OPS_MGR_HOST} -u $OPS_MGR_USR -p $OPS_MGR_PWD -k errands --product-name cf |
   tail -n+4 | head -n-1 | grep -v false | cut -d'|' -f2 | tr -d ' '
   )
   if [[ "$ERRANDS_TO_DISABLE" == "all" ]]; then
@@ -655,7 +655,7 @@ else
   else
     while read errand; do
       echo -n Disabling $errand...
-      om-linux -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k set-errand-state --product-name $PRODUCT_NAME --errand-name $errand --post-deploy-state "disabled"
+      om-linux -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k set-errand-state --product-name cf --errand-name $errand --post-deploy-state "disabled"
       echo done
     done < <(echo "$will_disable")
   fi
@@ -665,7 +665,7 @@ if [[ -z "$ERRANDS_TO_WHENCHANGED" ]] || [[ "$ERRANDS_TO_WHENCHANGED" == "none" 
   echo "No post-deploy errands to set to when-changed"
 else
   enabled_errands=$(
-  om-linux -t https://${OPS_MGR_HOST} -u $OPS_MGR_USR -p $OPS_MGR_PWD -k errands --product-name $PRODUCT_NAME |
+  om-linux -t https://${OPS_MGR_HOST} -u $OPS_MGR_USR -p $OPS_MGR_PWD -k errands --product-name cf |
   tail -n+4 | head -n-1 | grep -v false | cut -d'|' -f2 | tr -d ' '
   )
   if [[ "$ERRANDS_TO_WHENCHANGED" == "all" ]]; then
@@ -688,7 +688,7 @@ else
   else
     while read errand; do
       echo -n Disabling $errand...
-      om-linux -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k set-errand-state --product-name $PRODUCT_NAME --errand-name $errand --post-deploy-state "when-changed"
+      om-linux -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k set-errand-state --product-name cf --errand-name $errand --post-deploy-state "when-changed"
       echo done
     done < <(echo "$will_whenchanged")
   fi
@@ -698,7 +698,7 @@ if [[ -z "$PREDELETE_ERRANDS_TO_DISABLE" ]] || [[ "$PREDELETE_ERRANDS_TO_DISABLE
   echo "No pre-delete errands to disable"
 else
   enabled_errands=$(
-  om-linux -t https://${OPS_MGR_HOST} -u $OPS_MGR_USR -p $OPS_MGR_PWD -k errands --product-name $PRODUCT_NAME |
+  om-linux -t https://${OPS_MGR_HOST} -u $OPS_MGR_USR -p $OPS_MGR_PWD -k errands --product-name cf |
   tail -n+4 | head -n-1 | grep -v false | cut -d'|' -f2 | tr -d ' '
   )
   if [[ "$PREDELETE_ERRANDS_TO_DISABLE" == "all" ]]; then
@@ -721,7 +721,7 @@ else
   else
     while read errand; do
       echo -n Disabling $errand...
-      om-linux -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k set-errand-state --product-name $PRODUCT_NAME --errand-name $errand --pre-delete-state "disabled"
+      om-linux -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k set-errand-state --product-name cf --errand-name $errand --pre-delete-state "disabled"
       echo done
     done < <(echo "$will_disable")
   fi
