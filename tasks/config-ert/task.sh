@@ -50,7 +50,6 @@ cf_properties=$(
     --arg router_static_ips "$ROUTER_STATIC_IPS" \
     --arg disable_insecure_cookies "$DISABLE_INSECURE_COOKIES" \
     --arg router_request_timeout_seconds "$ROUTER_REQUEST_TIMEOUT_IN_SEC" \
-    --arg mysql_monitor_email "$MYSQL_MONITOR_EMAIL" \
     --arg tcp_router_static_ips "$TCP_ROUTER_STATIC_IPS" \
     --arg company_name "$COMPANY_NAME" \
     --arg ssh_static_ips "$SSH_STATIC_IPS" \
@@ -85,6 +84,9 @@ cf_properties=$(
     --arg ldap_last_name_attr "$LAST_NAME_ATTR" \
     --arg saml_cert_pem "$SAML_SSL_CERT" \
     --arg saml_key_pem "$SAML_SSL_PRIVATE_KEY" \
+    --arg mysql_monitor_email "$MYSQL_MONITOR_EMAIL" \
+    --arg mysql_proxy_static_ips "$MYSQL_PROXY_STATIC_IPS" \
+    --arg mysql_proxy_service_hostname "$MYSQL_PROXY_SERVICE_HOSTNAME" \
     --arg mysql_remote_admin "$MYSQL_REMOTE_ADMIN" \
     --arg mysql_backups "$MYSQL_BACKUPS" \
     --arg mysql_backups_s3_endpoint_url "$MYSQL_BACKUPS_S3_ENDPOINT_URL" \
@@ -152,6 +154,12 @@ cf_properties=$(
       },
       ".mysql_monitor.recipient_email": {
         "value": $mysql_monitor_email
+      },
+      ".mysql_proxy.static_ips": {
+        "value": $mysql_proxy_static_ips
+      },
+      ".mysql_proxy.service_hostname": {
+        "value": $mysql_proxy_service_hostname
       },
       ".tcp_router.static_ips": {
         "value": $tcp_router_static_ips
