@@ -30,7 +30,7 @@ jq \
   --arg dns "$OM_DNS_SERVERS" \
   --arg ntpServers "$OM_NTP_SERVERS" \
   --arg adminPassword "$OPS_MGR_SSH_PWD" \
-  --arg customHostname "$OPS_MGR_HOST" \
+  --arg customHostname "$OM_VM_NAME" \
   --arg network "$OM_VM_NETWORK" \
   --arg vmName "$OM_VM_NAME" \
   --arg diskType "$OM_DISK_TYPE" \
