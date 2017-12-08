@@ -2,6 +2,14 @@
 
 set -eu
 
+
+# echo "Shutting down OLD OpsMgr VM... ${OPSMAN_IP} for the upgrade"
+# Is it currently powered on?
+POWEREDON=`govc vm.info -vm.ip=${OM_IP} | grep poweredOn | awk '{print $3}'`
+if [ "$POWEREDON" == "poweredOn" ]; then
+   govc vm.power -off=true -vm.ip=${OM_IP}
+fi
+
 file_path=`find ./pivnet-opsman-product/ -name *.ova`
 
 echo $file_path
