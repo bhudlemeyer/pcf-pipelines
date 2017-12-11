@@ -37,8 +37,6 @@ function main() {
      --product-name "${PRODUCT_NAME}" \
      --product-version "${version}"
   
-  sleep 20
-  
   om-linux --target "https://${OPSMAN_URI}" \
      --skip-ssl-validation \
      --username "${OPSMAN_USERNAME}" \
