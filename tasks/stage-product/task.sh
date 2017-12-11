@@ -43,7 +43,7 @@ function main() {
      --skip-ssl-validation \
      --username "${OPSMAN_USERNAME}" \
      --password "${OPSMAN_PASSWORD}" \
-     staged-products | grep $PRODUCT_NAME | grep $version 2>& > /dev/null
+     staged-products | grep $PRODUCT_NAME | grep $version 2>&1 > /dev/null
   
   if [ $? != 0 ]; then
     echo "Exiting with failure because the product did not actually stage."
