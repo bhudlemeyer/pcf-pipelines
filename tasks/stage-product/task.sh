@@ -27,7 +27,7 @@ function main() {
   popd
   
   echo "version = $version"
-  echo "product = $product"
+  echo "product = $PRODUCT_NAME"
   
   om-linux --target "https://${OPSMAN_URI}" \
      --skip-ssl-validation \
