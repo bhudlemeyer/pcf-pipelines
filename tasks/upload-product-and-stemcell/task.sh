@@ -54,3 +54,8 @@ fi
 
 FILE_PATH=`find ./pivnet-product -name *.pivotal`
 om-linux -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k --request-timeout 3600 upload-product -p $FILE_PATH
+
+#
+# Sleep for a while in case the problems with not staging we are seeing are because the upload hasn't really finished
+#
+sleep 20
