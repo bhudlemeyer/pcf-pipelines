@@ -16,11 +16,11 @@ params:
   DEPLOYMENT_NW_AZS:
   OTHER_AZS:
   NETWORK_NAME:
-  PLAN_NAME: "100mb"
-  PLAN_DESCRIPTION: "100MB default"
-  PLAN_MAX_STORAGE_MB: 100
-  PLAN_MAX_USER_CONNECTIONS: 40
-  PLAN_INVISIBLE: false
+  PLAN_NAME:
+  PLAN_DESCRIPTION:
+  PLAN_MAX_STORAGE_MB:
+  PLAN_MAX_USER_CONNECTIONS:
+  PLAN_INVISIBLE:
   PROTECTION_EMAIL:
   BACKUP_CRON_SCHEDULE:
   BACKUP_SCP_HOST:
@@ -38,10 +38,13 @@ params:
   MYSQL_PROXY_STARTUP_DELAY:
   MONITORING_INSTANCES:
   MYSQL_BROKER_INSTANCES:
-  
+  ERRANDS_TO_DISABLE:
+  ERRANDS_TO_WHENCHANGED:
+  PREDELETE_ERRANDS_TO_DISABLE:
+
 inputs:
-  - name: pcf-pipelines
+  - name: pcf-tile-automation
   - name: tool-om
 
 run:
-  path: pcf-pipelines/tasks/config-mysql/task.sh
+  path: pcf-tile-automation/tasks/config-mysql/task.sh

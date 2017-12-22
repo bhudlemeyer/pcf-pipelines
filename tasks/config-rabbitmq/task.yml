@@ -25,13 +25,22 @@ params:
   RABBITMQ_CONFIG:
   RABBITMQ_ADMIN:
   RABBITMQ_PW:
+  SYSLOG_SELECTOR:
   SYSLOG_HOST:
   SYSLOG_PORT:  
   SERVICE_NETWORK:
+  SINGLE_NODE_ACCESS:
+  SINGLE_NODE_AZS:
+  SINGLE_NODE_VM_TYPE:
+  SINGLE_NODE_PERS_DISK_TYPE:
+  SINGLE_NODE_ACK:
+  ERRANDS_TO_DISABLE:
+  ERRANDS_TO_WHENCHANGED:
+  PREDELETE_ERRANDS_TO_DISABLE:
 
 inputs:
-  - name: pcf-pipelines
+  - name: pcf-tile-automation
   - name: tool-om
 
 run:
-  path: pcf-pipelines/tasks/config-rabbitmq/task.sh
+  path: pcf-tile-automation/tasks/config-rabbitmq/task.sh
